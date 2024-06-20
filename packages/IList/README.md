@@ -101,3 +101,26 @@ async function mockQuery() {
   </IList>
 </template>
 ```
+
+返回 total 置 0，或空，则取消分页。
+
+```vue
+<script setup>
+async function mockQuery() {
+  return { list: [{}] }
+}
+</script>
+<template>
+  <IList
+    ref="insRef"
+    :query="mockQuery"
+    style="height: 60%; background: white; color: blue"
+  >
+    <template #default="{ list }">
+      <div v-for="item in list" style="height: 50px">
+        {{ item.name }}
+      </div>
+    </template>
+  </IList>
+</template>
+```
