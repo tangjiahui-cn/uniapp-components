@@ -1,14 +1,20 @@
+/**
+ * loading 效果控制
+ *
+ * @author tangjiahui
+ * @date 2024/7/16
+ */
 
-import {  ref } from 'vue'
+import { ref } from 'vue'
 
-export default function useLoading () {
+function loadingFactory() {
   const loading = ref(false)
 
-  function isLoading () {
+  function isLoading() {
     return loading.value
   }
 
-  function showLoading () {
+  function showLoading() {
     loading.value = true
     uni.showToast({
       title: '加载中',
@@ -17,7 +23,7 @@ export default function useLoading () {
     })
   }
 
-  function hideLoading () {
+  function hideLoading() {
     uni.hideToast()
     loading.value = false
   }
@@ -28,3 +34,6 @@ export default function useLoading () {
     hideLoading
   }
 }
+
+const loading = loadingFactory()
+export default loading

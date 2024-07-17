@@ -1,0 +1,6 @@
+export * from './_utils'
+export { default as IDatePicker } from './IDatePicker/index.vue'
+export { default as IImage } from './IImage/index.vue'
+export { default as IList } from './IList/index.vue'
+export { default as IPage } from './IPage/index.vue'
+export { default as ISelect } from './ISelect/index.vue'

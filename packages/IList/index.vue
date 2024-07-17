@@ -8,7 +8,8 @@
  */
 import { watch, ref, computed } from 'vue'
 import { onPullDownRefresh } from '@dcloudio/uni-app'
-import useLoading from './useLoading'
+// import useLoading from './useLoading'
+import loading from '../_utils/loading'
 
 const emits = defineEmits(['change'])
 const props = defineProps({
@@ -77,7 +78,6 @@ const INIT_DATA = {
   list: [] // 缓存总列表
 }
 
-const loading = useLoading()
 const pagination = ref({ ...INIT_PAGINATION })
 const data = ref({ ...INIT_DATA })
 
@@ -145,7 +145,7 @@ watch(
 
 <template>
   <scroll-view
-    :class="['i-list', className]"
+    :class="['ttt-list', className]"
     :style="style"
     :scroll-y="true"
     :refresher-enabled="false"
@@ -163,7 +163,7 @@ watch(
 </template>
 
 <style scoped lang="scss">
-.i-list {
+.ttt-list {
   height: 100px;
 }
 </style>
